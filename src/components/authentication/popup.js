@@ -2,18 +2,35 @@ import React from 'react';
 import styled from 'styled-components'; 
 
 //styles
+const PopupContainer = styled.div ` 
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#000000;
+    opacity: 0.75; 
+ 
+`; 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 25px 50px;
-    background-color: #fff;
     border-radius: 20px;
-    width: 25em;
-    height: 40em;
     background-color: #fcfcfc; 
     margin: auto; 
+    background-color: White; 
+    display: block;  
+    width: 350px; 
+    z-index: 1001; 
+    position: fixed; 
+    left: 50%; 
+    margin-left: -175px; 
+    top: 150px; 
+    "
+   
 `; 
 const Items = styled.div`
     display: flex;
@@ -23,7 +40,7 @@ const Input = styled.input`
     margin-bottom: 30px;
     padding: 2px 0px;
     padding-bottom: 5px;
-    width: 250px;
+    width: 350px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -72,8 +89,9 @@ const Sign = styled.a`
     &:active {transform: translateY(2px)}
 `; 
 
-const Popup = () => {
+const Popup = (props) => {
     return (
+        <PopupContainer >
         <Container>
             <Title>Login</Title>
             <Items>
@@ -83,6 +101,7 @@ const Popup = () => {
                 <Sign type="submit" href="#">Sign Up</Sign>
             </Items>
         </Container>
+        </PopupContainer>
     )
 }
 

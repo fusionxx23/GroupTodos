@@ -19,7 +19,6 @@ const Menu = styled.div`
     margin-right: 50px;
 `; 
 
-
 const navbar = (props) => {
     return (
         <div>
@@ -34,7 +33,7 @@ const navbar = (props) => {
                     borderRadius: '10px',
                     padding: '7px',
                     textDecoration: 'none' }
-                }>Login</a>
+                } onClick={props.popup}>Login</a>
                 </Menu>
             </NavContainer>
         </div>
