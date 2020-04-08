@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import Popup from '../../components/authentication/popup'; 
 import Aux from '../outer/shell'; 
 import Navbar from '../../components/navigation/navbar'; 
-
-
-
-
 class Layout extends Component {
     state = {
         login: {

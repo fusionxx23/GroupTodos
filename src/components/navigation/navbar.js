@@ -1,5 +1,5 @@
 import React from 'react'; 
-import styled, { withTheme } from 'styled-components'; 
+import styled from 'styled-components'; 
 
 //styles 
 const NavContainer = styled.div`
@@ -11,6 +11,15 @@ const NavContainer = styled.div`
     padding: 0px 50px 0px 50px; 
     background-color: blue; 
     align-items: center; 
+`; 
+const NavLink = styled.a`
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none; 
+    margin-right: 10px; 
+    cursor:pointer; 
 `; 
 const Logo = styled.a`
     text-decoration: none; 
@@ -27,13 +36,8 @@ const navbar = (props) => {
                 Todos__
                 </Logo>
                 <Menu>
-                <a href="#" style={
-                    {color: 'white', 
-                    backgroundColor: 'black',
-                    borderRadius: '10px',
-                    padding: '7px',
-                    textDecoration: 'none' }
-                } onClick={props.popup}>Login</a>
+                <NavLink>Join a Group</NavLink>
+                <NavLink href="#" onClick={props.popup}>Login</NavLink>
                 </Menu>
             </NavContainer>
         </div>

@@ -88,11 +88,19 @@ const Sign = styled.a`
     text-decoration: none;
     &:active {transform: translateY(2px)}
 `; 
+const Xbox = styled.a`
+    position: relative; 
+    margin-left: 350px; 
+    text-decoration: none; 
+    color: #585858; 
+    font-size: 1.2rem; 
+    `; 
 
 const Popup = (props) => {
     return (
         <PopupContainer >
         <Container>
+            <Xbox onClick={props.popup} href="#">X</Xbox>
             <Title>Login</Title>
             <Items>
                 <Input type="text" placeholder="Username"/>
