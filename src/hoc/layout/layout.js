@@ -22,9 +22,7 @@ class Layout extends Component {
         this.setState({login: login}); 
         console.log(this.state.login); 
     }
-    modeSwitchHandler(mode) {
-        this.props.modeHandler(mode); 
-    }
+  
     render() {
         let loginPopup = null; 
         let mode = <SingleMode/>; 
@@ -33,7 +31,7 @@ class Layout extends Component {
         return(
            <Aux>
                 <Navbar modeStatus={this.props.groupMode} popup={() => this.popupHandler()}></Navbar>
-                <ModeSwitch modeSwitchHandler={(mode) => this.modeSwitchHandler(mode)}/>
+                <ModeSwitch singleMode={this.props.setModeSingleHandler} groupMode={this.props.setModeGroupHandler}/>
                 {this.props.children}
                 {loginPopup}
            </Aux>

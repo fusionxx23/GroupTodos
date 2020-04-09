@@ -6,10 +6,12 @@ class App extends Component {
     groupMode: false
   }
   setModeSingle() {
-
+    let mode = false; 
+    this.setState({groupMode: mode})
   }
   setModeGroup() {
-
+    let mode = true; 
+    this.setState({groupMode: mode})
   }
   render () {
     return (
