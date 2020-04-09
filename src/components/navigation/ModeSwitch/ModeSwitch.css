@@ -1,0 +1,25 @@
+.ModeSwitch {
+    display: flex; 
+    justify-content: center;
+    width: 100%; 
+}
+
+.ModeSwitch__Selector {
+    padding: 3px 10px 10px 10px; 
+    margin: 0; 
+    cursor: pointer;
+    color: white; 
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
+.ModeSwitch__SingleMode {
+    background-color: blue;
+    border-bottom-left-radius: 25px;
+}
+
+.ModeSwitch__GroupMode{
+    background-color: red;
+    border-bottom-right-radius: 25px;
+}

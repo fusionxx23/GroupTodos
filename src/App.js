@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
-import SingleMode from './containers/mode/SingleMode/SingleMode'; 
-import GroupMode from './containers/mode/GroupMode/GroupMode'; 
+
 import Layout from './hoc/layout/layout'; 
 class App extends Component {
-
   state = {
     groupMode: false
   }
+  setModeSingle() {
 
+  }
+  setModeGroup() {
 
+  }
   render () {
-    let mode = <SingleMode/>; 
-    if(this.state.groupMode) mode = <GroupMode/>; 
     return (
-      <Layout>  
-        {mode} 
+      <Layout groupMode={this.state.groupMode} setModeGroupHandler={() => this.setModeGroup()}  setModeSingleHandler={() => this.setModeSingle()}>  
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"></link>
       </Layout>
     );
   }
 }
-
-
 
 export default App;

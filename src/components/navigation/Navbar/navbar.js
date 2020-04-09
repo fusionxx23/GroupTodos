@@ -7,9 +7,8 @@ const NavContainer = styled.div`
     height: 50px; 
     display: flex; 
     justify-content: space-between; 
-    margin-bottom: 50px; 
+   
     padding: 0px 50px 0px 50px; 
-    background-color: blue; 
     align-items: center; 
 `; 
 const NavLink = styled.a`
@@ -31,7 +30,7 @@ const Menu = styled.div`
 const navbar = (props) => {
     return (
         <div>
-            <NavContainer> 
+            <NavContainer style={{backgroundColor: props.modeStatus ? 'Red' : 'Blue'}}> 
                 <Logo href='#'>
                 Todos__
                 </Logo>
