@@ -1,0 +1,88 @@
+
+.LoginPopup {
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#000000;
+    opacity: 0.75; 
+}
+.LoginPopup__Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 50px;
+    border-radius: 20px;
+    background-color: #fcfcfc; 
+    width: 350px; 
+    z-index: 1001; 
+    position: fixed; 
+    left: 50%; 
+    margin-left: -175px; 
+    top: 150px; 
+}
+.LoginPopup__Items {
+    display: flex;
+    flex-direction: column;
+}
+.LoginPopup__Input {
+    margin-bottom: 30px;
+    padding: 2px 0px;
+    padding-bottom: 5px;
+    width: 250px;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid;
+    border-bottom-color: grey;
+    font-weight: 700;
+    color: #585858;
+    opacity: 0.55;
+}
+.LoginPopup__Title {
+    margin-bottom: 50px; 
+    letter-spacing: 5px; 
+    text-align:center; 
+    opacity:0.5;     
+}
+.LoginPopup__Button {
+    padding: 20px 30px;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    font-size: medium;
+    font-weight: 600;
+    letter-spacing: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(6, 215, 152, 1) 0%,
+      rgba(32, 204, 158, 1) 30%,
+      rgba(135, 219, 213, 1) 70%
+    );
+    color: grey;
+}
+.LoginPopup__Button:active {
+    transform: translateY(2px); 
+}
+.LoginPopup__Submit {
+    margin-top: 4em;
+    text-align: center;
+    letter-spacing: 5px;
+    cursor: pointer;
+    color: rgb(11, 194, 142);
+    font-weight: bolder;
+    text-decoration: none;
+}
+.LoginPopup__Submit:active {transform: translateY(2px)}
+.LoginPopup__Xbox {
+    position: relative; 
+margin-left: 350px; 
+text-decoration: none; 
+color: #585858; 
+font-size: 1.2rem; 
+}

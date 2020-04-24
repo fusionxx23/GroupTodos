@@ -1,1 +1,4 @@
-In process of adding Single mode and Group mode Changing handler
+Create DB 
+Authentication
+Adding to list for group and single 
+Join Group 
