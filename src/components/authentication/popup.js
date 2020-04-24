@@ -8,6 +8,7 @@ class Popup extends Component {
     constructor(props) {
         super(props); 
         this.login = this.login.bind(this); 
+        this.signUp = this.signUp.bind(this); 
         this.handleChange = this.handleChange.bind(this); 
     }
     state = {
@@ -15,10 +16,14 @@ class Popup extends Component {
         password: ''
     }
     login(e) {
+        let self = this; 
         e.preventDefault(); 
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((u) => {})
+        .then((u) => {
+            self.props.loggedIn(); 
+        })
         .catch((err) => console.log(err)); 
+        console.log(fire.auth().currentUser + "Current User"); 
     }
     signUp(e) {
         e.preventDefault(); 
@@ -40,7 +45,7 @@ class Popup extends Component {
                         <input className='LoginPopup__Input' name='email' type="text" value={this.state.email} placeholder="Username" onChange={this.handleChange} />
                         <input className='LoginPopup__Input' name='password' type="password" value={this.state.password}  placeholder="Password" onChange={this.handleChange}/>
                         <button className='LoginPopup__Button' onClick={this.login}>Send</button>
-                        <button className='LoginPopup__Submit' type="submit" href="#">Sign Up</button>
+                        <button className='LoginPopup__Submit' type="submit" href="#" onClick={this.signUp}>Sign Up</button>
                     </div>
                 </div>
             </div>
