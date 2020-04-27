@@ -15,7 +15,8 @@ class Layout extends Component {
         user: {
             signedIn: true, 
             user: null
-        }
+        },
+        groupMode: false 
     }
     popupHandler() {
         let login = {
@@ -33,7 +34,17 @@ class Layout extends Component {
             popup: false, 
             loggedIn: true
         }
-        this.setState({login: login}); 
+        let user = fire.auth().currentUser; 
+        if(user) {
+            console.log('in')
+            let userObj = {signedIn: true, user: user}
+            this.setState({user:userObj, login: login}); 
+        } else {
+            console.log('out')
+            let userObj = {signedIn: false, user: null} 
+            this.setState({user:userObj, login: login})
+        }
+         
     }
     componentWillMount() {
         console.log('Will Mount Ran'); 
@@ -61,7 +72,16 @@ class Layout extends Component {
             this.setState({user:userObj})
         }
     }
+    setModeSingle() {
+        let mode = false; 
+        this.setState({groupMode: mode})
+    }
+    setModeGroup() {
+        let mode = true; 
+        this.setState({groupMode: mode})  
+    }
     render() {
+        fire.auth().onAuthStateChanged(user => {if(user) console.log('yes');})
         let loginPopup = null; 
         let mode = <SingleMode user={this.state.user}/>; 
         if(this.state.groupMode){ 
@@ -70,8 +90,8 @@ class Layout extends Component {
         if(this.state.login.popup) loginPopup = <Popup loggedIn={() => this.loggedInHandler()} popup={() => this.popupHandler()}></Popup>; 
         return(
            <Aux>
-                <Navbar modeStatus={this.props.groupMode} popup={() => this.popupHandler()}></Navbar>
-                <ModeSwitch singleMode={this.props.setModeSingleHandler} groupMode={this.props.setModeGroupHandler}/>
+                <Navbar modeStatus={this.state.groupMode} popup={() => this.popupHandler()}></Navbar>
+                <ModeSwitch singleMode={this.setModeSingle.bind(this)} groupMode={this.setModeGroup.bind(this)}/>
                 {this.props.children}
                 {loginPopup}
                 {mode}

@@ -16,7 +16,6 @@ class App extends Component {
       }
     })
   }
-
   state = {
     groupMode: false,
     user: {} 
@@ -24,14 +23,7 @@ class App extends Component {
   componentDidMount() {
     this.authListener(); 
   }
-  setModeSingle() {
-    let mode = false; 
-    this.setState({groupMode: mode})
-  }
-  setModeGroup() {
-    let mode = true; 
-    this.setState({groupMode: mode})
-  }
+
   render () {
     return (
       <Layout user={this.state.user} groupMode={this.state.groupMode} setModeGroupHandler={() => this.setModeGroup()}  setModeSingleHandler={() => this.setModeSingle()}>  

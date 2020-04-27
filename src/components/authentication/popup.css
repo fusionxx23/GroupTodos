@@ -38,8 +38,10 @@
     border-bottom: 1.5px solid;
     border-bottom-color: grey;
     font-weight: 700;
-    color: #585858;
-    opacity: 0.55;
+    opacity: 1;
+}
+.LoginPopup__Input[type=text]{
+    color: black; 
 }
 .LoginPopup__Title {
     margin-bottom: 50px; 
@@ -47,6 +49,7 @@
     text-align:center; 
     opacity:0.5;     
 }
+
 .LoginPopup__Button {
     padding: 20px 30px;
     margin-top: 30px;
@@ -60,11 +63,11 @@
     background: linear-gradient(
       90deg,
       rgba(2, 0, 36, 1) 0%,
-      rgba(6, 215, 152, 1) 0%,
-      rgba(32, 204, 158, 1) 30%,
-      rgba(135, 219, 213, 1) 70%
+      rgba(0, 166, 255, 0.918) 0%,
+      rgb(0, 145, 255) 30%,
+      rgb(22, 29, 255) 70%
     );
-    color: grey;
+    color: rgb(36, 36, 36);
 }
 .LoginPopup__Button:active {
     transform: translateY(2px); 
@@ -74,15 +77,19 @@
     text-align: center;
     letter-spacing: 5px;
     cursor: pointer;
-    color: rgb(11, 194, 142);
+    color: rgb(13, 94, 193);
     font-weight: bolder;
     text-decoration: none;
 }
 .LoginPopup__Submit:active {transform: translateY(2px)}
 .LoginPopup__Xbox {
     position: relative; 
-margin-left: 350px; 
-text-decoration: none; 
-color: #585858; 
-font-size: 1.2rem; 
+    margin-left: 350px; 
+    text-decoration: none; 
+    color: #000000; 
+    font-size: 1.2rem; 
+}
+.LoginPopup__ErrorMessage {
+    color: rgb(255, 96, 96); 
+    width: 250px; 
 }

@@ -13,16 +13,26 @@ class Popup extends Component {
     }
     state = {
         email:'', 
-        password: ''
+        password: '',
+        error: {
+            occur: false, 
+            errorMessage: null
+        }
     }
     login(e) {
         let self = this; 
         e.preventDefault(); 
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((u) => {
+            console.log('hello'); 
             self.props.loggedIn(); 
         })
-        .catch((err) => console.log(err)); 
+        .catch((err) =>{
+        
+            let error = {occur: true, errorMessage: err.message}; 
+            self.setState({error: error})
+            console.log(err ); 
+        } ); 
         console.log(fire.auth().currentUser + "Current User"); 
     }
     signUp(e) {
@@ -35,6 +45,8 @@ class Popup extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
     render() {
+        let error = this.state.error.errorMessage; 
+        console.log(this.state.error.errorMessage); 
         return (
             <Shell>
             <div className='LoginPopup'>
@@ -44,6 +56,7 @@ class Popup extends Component {
                     <div className='LoginPopup__Items'>
                         <input className='LoginPopup__Input' name='email' type="text" value={this.state.email} placeholder="Username" onChange={this.handleChange} />
                         <input className='LoginPopup__Input' name='password' type="password" value={this.state.password}  placeholder="Password" onChange={this.handleChange}/>
+                        {this.state.error.occur ? <h6 className='LoginPopup__ErrorMessage'>{error}</h6> : null}
                         <button className='LoginPopup__Button' onClick={this.login}>Send</button>
                         <button className='LoginPopup__Submit' type="submit" href="#" onClick={this.signUp}>Sign Up</button>
                     </div>
